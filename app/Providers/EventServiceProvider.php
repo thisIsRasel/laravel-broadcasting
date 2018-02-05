@@ -16,9 +16,6 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\UserLoggedInEvent' => [
             'App\Listeners\UserLoggedInListener',
         ],
-        'App\Events\TestEvent' => [
-            'App\Listeners\TestListener'
-        ],
         'App\Events\ChatEvent' => [
             'App\Listeners\ChatListener'
         ],
