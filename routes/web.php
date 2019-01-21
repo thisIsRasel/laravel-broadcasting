@@ -22,3 +22,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/chat/{buddy}', 'ChatController@index');
 
 Route::post('send_message', 'ChatController@store');
+
+Route::get('video-chat', "VideoRoomsController@index");
+Route::prefix('room')->middleware('auth')->group(function() {
+   Route::get('join/{roomName}', 'VideoRoomsController@joinRoom');
+   Route::post('create', 'VideoRoomsController@createRoom');
+});
